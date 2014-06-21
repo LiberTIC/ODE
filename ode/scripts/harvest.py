@@ -26,7 +26,7 @@ def main():
     config_uri = args[0]
     pyramid.paster.setup_logging(config_uri)
     env = bootstrap(config_uri)
-    settings, closer = env['registry'].settings, env['closer']
+    closer = env['closer']
     try:
         with transaction.manager:
             harvest()
